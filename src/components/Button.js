@@ -1,46 +1,57 @@
 import React from 'react';
-import {StyleSheet, Text, Dimensions, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, Dimensions, TouchableHighlight, View} from 'react-native';
 
 export default props => {
 
     const stylesButton = [styles.button]
 
     if (props.double) stylesButton.push(styles.btnDouble)
-    if (props.triple) stylesButton.push(styles.btnTriple)
     if (props.opr) stylesButton.push(styles.oprBtn)
     if (props.spc) stylesButton.push(styles.spc)
 
+    const fontSpc = []
+
+    if (props.fontSpc) fontSpc.push(styles.fontSpc)
+
   return (
-    <TouchableHighlight onPress={props.onClick}>
-      <Text style={stylesButton}>{props.label || 'Sem valor'}</Text>
+    <TouchableHighlight style={stylesButton} onPress={() => props.onClick(props.label)}>
+      <Text style={[styles.buttonValue, fontSpc]}>{props.label || 'N'}</Text>
     </TouchableHighlight>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    fontSize: 30,
     width: Dimensions.get('window').width / 4,
-    height: Dimensions.get('window').height / 6,
+    height: Dimensions.get('window').height / 8,
     padding: 15,
     backgroundColor: '#7e7e7e',
     color: '#fff',
     fontWeight: 'bold',
-    textAlign: 'center',
     borderWidth: 3,
     borderColor: '#1e1e1e',
+    borderRadius: 50,
+    margin: 13
+  },
+  buttonValue:{
+    color: '#fff',
+    fontSize: 50,
+    textAlign: 'center',
   },
   oprBtn: {
-    backgroundColor: '#7e7e'
+    backgroundColor: '#7e7e',
+    width: Dimensions.get('window').width / 8,
+    height: Dimensions.get('window').height / 10,
+    padding: 0,
+    margin: 3
   },
   btnDouble: {
-    width: (Dimensions.get('window').width / 4) * 2,
-  },
-  btnTriple: {
-    width: (Dimensions.get('window').width / 4) * 3,
+    width: Dimensions.get('window').width / 2.5,
   },
   spc: {
     backgroundColor: '#ff0',
-    color: "#000"
+  },
+  fontSpc: {
+    color: '#000'
   }
 });

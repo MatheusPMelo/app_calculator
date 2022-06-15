@@ -13,17 +13,18 @@ export default (props) => {
     )
 }
 
+const mg = 10
+
 const styles = StyleSheet.create({
     display: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#000',
         alignItems: 'flex-end',
-        padding: 30,
-        width: '100%'
+        marginTop: mg,
+        marginBottom: mg,
     },
     displayValue: {
-        fontSize: 50,
-        color: '#7e7'
+        fontSize: 90,
+        color: '#222'
     }
 })
