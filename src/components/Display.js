@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     },
     displayValue: {
         fontSize: 90,
-        color: '#222'
+        color: '#fff'
     }
 })

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   oprBtn: {
-    backgroundColor: '#7e7e',
+    backgroundColor: '#555',
     width: Dimensions.get('window').width / 8,
     height: Dimensions.get('window').height / 10,
     padding: 0,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width / 2.5,
   },
   spc: {
-    backgroundColor: '#ff0',
+    backgroundColor: '#ff9444',
   },
   fontSpc: {
     color: '#000'
